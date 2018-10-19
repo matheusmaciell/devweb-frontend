@@ -13,7 +13,7 @@ import { FormInputs } from "components/FormInputs/FormInputs.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 
-import avatar from "assets/img/faces/face-3.jpg";
+import avatar from "assets/img/faces/paulovillar.png";
 
 class UserProfile extends Component {
   render() {
@@ -23,29 +23,29 @@ class UserProfile extends Component {
           <Row>
             <Col md={8}>
               <Card
-                title="Edite seu perfil"
+                title="Editar perfil"
                 content={
                   <form>
                     <FormInputs
                       ncols={["col-md-5", "col-md-3", "col-md-4"]}
                       proprieties={[
                         {
-                          label: "Company (disabled)",
+                          label: "Escola (disabled)",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Company",
-                          defaultValue: "Creative Code Inc.",
+                          placeholder: "Escola",
+                          defaultValue: "Panorama jovem.",
                           disabled: true
                         },
                         {
-                          label: "Username",
+                          label: "Nome de usuário",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Username",
-                          defaultValue: "michael23"
+                          placeholder: "Nome de usuário",
+                          defaultValue: "mileu123"
                         },
                         {
-                          label: "Email address",
+                          label: "Email",
                           type: "email",
                           bsClass: "form-control",
                           placeholder: "Email"
@@ -56,18 +56,18 @@ class UserProfile extends Component {
                       ncols={["col-md-6", "col-md-6"]}
                       proprieties={[
                         {
-                          label: "First name",
+                          label: "Primeiro nome",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "First name",
-                          defaultValue: "Mike"
+                          placeholder: "Primeiro nome",
+                          defaultValue: "Matheus"
                         },
                         {
-                          label: "Last name",
+                          label: "Sobrenome",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Last name",
-                          defaultValue: "Andrew"
+                          placeholder: "Sobrenome",
+                          defaultValue: "Maciel"
                         }
                       ]}
                     />
@@ -75,12 +75,12 @@ class UserProfile extends Component {
                       ncols={["col-md-12"]}
                       proprieties={[
                         {
-                          label: "Adress",
+                          label: "Endereço",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Home Adress",
+                          placeholder: "Endereço",
                           defaultValue:
-                            "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+                            "Beco da facada, 543, santa rosa"
                         }
                       ]}
                     />
@@ -88,44 +88,31 @@ class UserProfile extends Component {
                       ncols={["col-md-4", "col-md-4", "col-md-4"]}
                       proprieties={[
                         {
-                          label: "City",
+                          label: "Cidade",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "City",
-                          defaultValue: "Mike"
+                          placeholder: "Cidade",
+                          defaultValue: "Campina grande"
                         },
-                        {
-                          label: "Country",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Country",
-                          defaultValue: "Andrew"
-                        },
-                        {
-                          label: "Postal Code",
-                          type: "number",
-                          bsClass: "form-control",
-                          placeholder: "ZIP Code"
-                        }
                       ]}
                     />
 
                     <Row>
                       <Col md={12}>
                         <FormGroup controlId="formControlsTextarea">
-                          <ControlLabel>About Me</ControlLabel>
+                          <ControlLabel>SObre mim</ControlLabel>
                           <FormControl
                             rows="5"
                             componentClass="textarea"
                             bsClass="form-control"
-                            placeholder="Here can be your description"
-                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                            placeholder="Aqui você pode colocar uma descrição sobre você"
+                            defaultValue="Gosto de ouvir musica e brincar com meus amigos."
                           />
                         </FormGroup>
                       </Col>
                     </Row>
                     <Button bsStyle="info" pullRight fill type="submit">
-                      Update Profile
+                      Atualizar perfil
                     </Button>
                     <div className="clearfix" />
                   </form>
@@ -136,15 +123,11 @@ class UserProfile extends Component {
               <UserCard
                 bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
                 avatar={avatar}
-                name="Mike Andrew"
-                userName="michael24"
+                name="Matheus Maciel"
+                userName="mileu123"
                 description={
                   <span>
-                    "Lamborghini Mercy
-                    <br />
-                    Your chick she so thirsty
-                    <br />
-                    I'm in that two seat Lambo"
+                    Gosto de ouvir musica e brincar com meus amigos.
                   </span>
                 }
                 socials={

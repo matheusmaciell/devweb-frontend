@@ -3,7 +3,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import NotificationSystem from "react-notification-system";
 
 import Header from "components/Header/Header";
-import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
 
 import { style } from "variables/Variables.jsx";
@@ -54,7 +53,7 @@ class Dashboard extends Component {
   componentDidMount() {
     this.setState({ _notificationSystem: this.refs.notificationSystem });
     var _notificationSystem = this.refs.notificationSystem;
-    var color = Math.floor(Math.random() * 4 + 1);
+    var color =  1;
     var level;
     switch (color) {
       case 1:
@@ -76,8 +75,7 @@ class Dashboard extends Component {
       title: <span data-notify="icon" className="pe-7s-gift" />,
       message: (
         <div>
-          Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for
-          every web developer.
+          Seja bem-vindo.
         </div>
       ),
       level: level,
@@ -105,7 +103,7 @@ class Dashboard extends Component {
         <NotificationSystem ref="notificationSystem" style={style} />
         <Sidebar {...this.props} />
         <div id="main-panel" className="main-panel" ref="mainPanel">
-          <Header {...this.props} />
+        <Header {...this.props} />
           <Switch>
             {dashboardRoutes.map((prop, key) => {
               if (prop.name === "Notifications")
@@ -128,7 +126,6 @@ class Dashboard extends Component {
               );
             })}
           </Switch>
-          <Footer />
         </div>
       </div>
     );

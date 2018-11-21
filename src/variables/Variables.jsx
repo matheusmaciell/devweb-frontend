@@ -147,6 +147,7 @@ var style = {
       marginTop: "-15px"
     }
   },
+  
 
   MessageWrapper: {
     DefaultStyle: {
@@ -255,6 +256,14 @@ const tdArray = [
   ["4", "pilieu", "fundamental 1"],
   ["5", "Dona chica", "5° Tarde"],
   ["6", "Não é artista", "3° medio"]
+];
+
+const DisArray = ["ID", "Nome", "Notas"];
+const NotasArray = [
+  ["1", "Artes sexuais", "1  9.8  8"],
+  ["2", "Artes das trevas", "9   6   7"],
+  ["3", "Morte ao capitalismo", "10  10  10"],
+  ["4", "Matematica",  "1  0  0"],
 ];
 
 //
@@ -585,6 +594,8 @@ module.exports = {
   tdArray, // For tables (TableList view)
   iconsArray, // For icons (Icons view)
   dataPie,
+  NotasArray,
+  DisArray,
   legendPie,
   dataSales,
   optionsSales,

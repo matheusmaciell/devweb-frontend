@@ -1,6 +1,6 @@
 import UserProfile from "../views/UserProfile/UserProfile";
 import TableList from "../views/TableList/TableList";
-
+import UserGrades from "../views/UserGrades/UserGrades";
 
 
 const dashboardRoutes = [
@@ -17,6 +17,15 @@ const dashboardRoutes = [
     icon: "pe-7s-note2",
     component: TableList
   },
+  {
+    path: "/Notas",
+    name: "Notas",
+    icon: "pe-7s-paper-plane",
+    component: UserGrades
+
+  },
+
+
   { redirect: true, path: "/", to: "/user", name: "User Profile" }
 ];
 

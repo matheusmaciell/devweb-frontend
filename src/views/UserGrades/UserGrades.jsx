@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Grid, Row, Col, Table } from "react-bootstrap";
 
 import Card from "../../components/Card/Card.jsx";
-import { thArray, tdArray } from "../../variables/Variables.jsx";
+import { DisArray, NotasArray } from "../../variables/Variables.jsx";
 
-class TableList extends Component {
+class UserGrades extends Component {
   render() {
     return (
      
@@ -13,7 +13,7 @@ class TableList extends Component {
           <Row>
             <Col md={12}>
               <Card
-                title="Alunos Matriculados"
+                title="Notas"
                 //category="Aqui pode botar uma descrição"
                 ctTableFullWidth
                 ctTableResponsive
@@ -21,13 +21,13 @@ class TableList extends Component {
                   <Table striped hover>
                     <thead>
                       <tr>
-                        {thArray.map((prop, key) => {
+                        {DisArray.map((prop, key) => {
                           return <th key={key}>{prop}</th>;
                         })}
                       </tr>
                     </thead>
                     <tbody>
-                      {tdArray.map((prop, key) => {
+                      {NotasArray.map((prop, key) => {
                         return (
                           <tr key={key}>
                             {prop.map((prop, key) => {
@@ -48,4 +48,4 @@ class TableList extends Component {
   }
 }
 
-export default TableList;
+export default UserGrades;

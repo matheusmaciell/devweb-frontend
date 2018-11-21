@@ -1,10 +1,10 @@
-import UserProfile from "views/UserProfile/UserProfile";
-import TableList from "views/TableList/TableList";
-import Typography from "views/Typography/Typography";
+import UserProfile from "../views/UserProfile/UserProfile";
+import TableList from "../views/TableList/TableList";
+
 
 
 const dashboardRoutes = [
-  
+
   {
     path: "/user",
     name: "Perfil de usuário",

@@ -3,13 +3,32 @@ import { Grid, Row, Col, Table } from "react-bootstrap";
 
 import Card from "../../components/Card/Card.jsx";
 import { thArray, tdArray } from "../../variables/Variables.jsx";
+import axios from 'axios';
+
+
+
+
+
 
 class TableList extends Component {
+  users() {
+      }
+
+  componentDidMount(){
+    console.log('asdasd')
+    axios.get('http://localhost:9000/user')
+    .then(response => {
+      console.log(response);
+    })
+
+  }
+  
   render() {
     return (
      
       <div className="content">
         <Grid fluid>
+        
           <Row>
             <Col md={12}>
               <Card

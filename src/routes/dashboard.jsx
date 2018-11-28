@@ -1,12 +1,7 @@
-<<<<<<< HEAD
+
 import UserProfile from "../views/UserProfile/UserProfile";
 import TableList from "../views/TableList/TableList";
 import UserGrades from "../views/UserGrades/UserGrades";
-=======
-import UserProfile from "views/UserProfile/UserProfile";
-import TableList from "views/TableList/TableList";
-import Typography from "views/Typography/Typography";
->>>>>>> parent of e8e6279... DEUS AGORA FOI
 
 
 const dashboardRoutes = [

@@ -245,7 +245,7 @@ var style = {
 };
 
 
-const thArray = ["ID", "Nome", "Turma"];
+const thArray = ["Nome", "Turma","email"];
 const tdArray = [
   ["1", "Anitta", "1° A"],
   ["2", "Paulo villar", "2° b"],

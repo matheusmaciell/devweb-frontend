@@ -3,29 +3,46 @@ import { Grid, Row, Col, Table } from "react-bootstrap";
 
 import Card from "../../components/Card/Card.jsx";
 import { thArray, tdArray } from "../../variables/Variables.jsx";
-import axios from 'axios';
+//import axios from 'axios';
 
-
+import {Api} from "../../service/Api.js";
 
 
 
 
 class TableList extends Component {
-  users() {
-      }
+ 
+  constructor(props){
+    super(props);
+    this.state = {
+      estudantes:[]
+    }
+  }
 
-  componentDidMount(){
-    console.log('asdasd')
-    axios.get('http://localhost:9000/user')
-    .then(response => {
-      console.log(response);
+
+  componentWillMount = async() => {
+      await this.recarrega();
+
+
+
+  }
+   recarrega = async() => {
+    //console.log('asdasd')
+    Api.get('/user')
+    .then((response) => {
+     // console.log("deu certo")
+     // console.log(response.data);
+    
+      this.setState({estudantes:response.data});
+      
     })
-
+   
   }
   
   render() {
+    //console.log(this.state)
     return (
-     
+      
       <div className="content">
         <Grid fluid>
         
@@ -46,12 +63,14 @@ class TableList extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      {tdArray.map((prop, key) => {
+                    {this.state.estudantes.map((prop, key) => {
+                      console.log(prop);
                         return (
                           <tr key={key}>
-                            {prop.map((prop, key) => {
-                              return <td key={key}>{prop}</td>;
-                            })}
+                              <td key={key}>{prop.UserName}</td>
+                              <td key={key}>{prop.UserName}</td>
+                              <td key={key}>{prop.userEmail}</td>
+                          
                           </tr>
                         );
                       })}

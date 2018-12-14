@@ -23,9 +23,7 @@ class TableList extends Component {
   componentWillMount = async() => {
       await this.recarrega();
 
-
-
-  }
+}
    recarrega = async() => {
     //console.log('asdasd')
     Api.get('/user')

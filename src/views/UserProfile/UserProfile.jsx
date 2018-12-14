@@ -10,12 +10,40 @@ import {
 
 import { Card } from "../../components/Card/Card.jsx";
 import { FormInputs } from "../../components/FormInputs/FormInputs.jsx";
-import { UserCard } from "../../components/UserCard/UserCard.jsx";
+import MyCard from "../UserProfile/User.jsx"
 import Button from "../../components/CustomButton/CustomButton.jsx";
 
-import avatar from "../../assets/img/faces/paulovillar.png";
+
+
+import {Api} from "../../service/Api.js";
+
+
 
 class UserProfile extends Component {
+
+
+
+
+
+  constructor(props){
+    super(props);
+    this.state = {
+      estudante:[]
+    }
+  }
+
+
+  componentWillMount = async() => {
+    await this.recarrega();
+}
+ recarrega = async() => {
+
+  Api.get('/user/5c13aaed7ced3a3e11da51ee')
+  .then((response) => {
+    this.setState({estudante:response.data});
+    console.log(this.state.estudante)
+  })
+ }
   render() {
     return (
       <div className="content">
@@ -41,36 +69,19 @@ class UserProfile extends Component {
                           label: "Nome de usuário",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Nome de usuário",
-                          defaultValue: "mileu123"
+                          value: this.state.estudante.UserName,
+                          disabled: true
                         },
                         {
                           label: "Email",
                           type: "email",
                           bsClass: "form-control",
-                          placeholder: "Email"
+                          value: this.state.estudante.userEmail,
+                          disabled: true
                         }
                       ]}
                     />
-                    <FormInputs
-                      ncols={["col-md-6", "col-md-6"]}
-                      proprieties={[
-                        {
-                          label: "Primeiro nome",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Primeiro nome",
-                          defaultValue: "Matheus"
-                        },
-                        {
-                          label: "Sobrenome",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Sobrenome",
-                          defaultValue: "Maciel"
-                        }
-                      ]}
-                    />
+              
                     <FormInputs
                       ncols={["col-md-12"]}
                       proprieties={[
@@ -79,25 +90,23 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Endereço",
-                          defaultValue:
-                            "Beco da facada, 543, santa rosa"
+                          value: this.state.estudante.address
                         }
                       ]}
                     />
-                    <FormInputs
-                      ncols={["col-md-4", "col-md-4", "col-md-4"]}
+                     <FormInputs
+                      ncols={["col-md-12"]}
                       proprieties={[
                         {
                           label: "Cidade",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Cidade",
-                          defaultValue: "Campina grande"
+                          value: this.state.estudante.city
                         },
                       ]}
                     />
-
-                    <Row>
+                     <Row>
                       <Col md={12}>
                         <FormGroup controlId="formControlsTextarea">
                           <ControlLabel>SObre mim</ControlLabel>
@@ -106,7 +115,7 @@ class UserProfile extends Component {
                             componentClass="textarea"
                             bsClass="form-control"
                             placeholder="Aqui você pode colocar uma descrição sobre você"
-                            defaultValue="Gosto de ouvir musica e brincar com meus amigos."
+                            value={this.state.estudante.about}
                           />
                         </FormGroup>
                       </Col>
@@ -120,31 +129,8 @@ class UserProfile extends Component {
               />
             </Col>
             <Col md={4}>
-              <UserCard
-                bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
-                avatar={avatar}
-                name="Matheus Maciel"
-                userName="mileu123"
-                description={
-                  <span>
-                    Gosto de ouvir musica e brincar com meus amigos.
-                  </span>
-                }
-                socials={
-                  <div>
-                    <Button simple>
-                      <i className="fa fa-facebook-square" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-google-plus-square" />
-                    </Button>
-                  </div>
-                }
-              />
-            </Col>
+                <MyCard estudante={this.state.estudante}></MyCard>
+                </Col>
           </Row>
         </Grid>>
       </div>

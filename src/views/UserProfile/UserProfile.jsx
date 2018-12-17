@@ -28,7 +28,13 @@ class UserProfile extends Component {
   constructor(props){
     super(props);
     this.state = {
-      estudante:[]
+      estudante:
+      {UserName: "",
+      password: "123456",
+      userEmail: "",
+      about: "",
+      city: "",
+      address: "",}
     }
   }
 
@@ -38,9 +44,12 @@ class UserProfile extends Component {
 }
  recarrega = async() => {
 
-  Api.get('/user/5c13aaed7ced3a3e11da51ee')
+  Api.get('/user')
   .then((response) => {
-    this.setState({estudante:response.data});
+    if(response.data[0] !== undefined){
+      this.setState({estudante:response.data[0]});
+      console.log("deu merda")
+    }
     console.log(this.state.estudante)
   })
  }
@@ -120,9 +129,7 @@ class UserProfile extends Component {
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Button bsStyle="info" pullRight fill type="submit">
-                      Atualizar perfil
-                    </Button>
+                   
                     <div className="clearfix" />
                   </form>
                 }

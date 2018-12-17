@@ -2,6 +2,7 @@
 import UserProfile from "../views/UserProfile/UserProfile";
 import TableList from "../views/TableList/TableList";
 import UserGrades from "../views/UserGrades/UserGrades";
+import Register from "../views/Register/Register";
 
 
 const dashboardRoutes = [
@@ -25,7 +26,13 @@ const dashboardRoutes = [
     component: UserGrades
 
   },
+  {
+    path: "/cadastro",
+    name: "Cadastro",
+    icon: "pe-7s-plus",
+    component: Register
 
+  },
 
   { redirect: true, path: "/", to: "/user", name: "User Profile" }
 ];
